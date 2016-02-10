@@ -1,5 +1,5 @@
 namespace :sync do
-	task feeds: [:enviorment] do
+	task feeds: [:environment] do
 		Feed.all.each do |feed|
 			content = Feedjira::Feed.fetch_and_parse feed.url
 			content.entries.each do |entry|
