@@ -1,19 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @feed.name %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @feed.url %>
-</p>
-
-<p>
-  <strong>Deescription:</strong>
-  <%= @feed.deescription %>
-</p>
+<div class="container">
+  <h3> There are <%= link_to "#{@feed.entries.count} entries", entries_path %> available for the feed <%= @feed.name %></h3>
+  <hr />
+  <%= link_to 'Edit', edit_feed_path %>
+  <%= link_to 'Back', feeds_path %>
+</div>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>

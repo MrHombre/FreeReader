@@ -1,15 +1,12 @@
 class EntriesController < ApplicationController
+  
   def index
+    @feed = Feed.find(params[:feed_id])
   	@entries = @feed.entries.order('published desc')
   end
 
   def show
-  	@entry = Entry.find(params[:id])
-  end
-
-  private
-
-  def set_feed
-  	@feed = Feed.find(params[:id])
+    @feed = Feed.find(params[:feed_id])
+  	@entry = Entry.find(params[:feed_id])
   end
 end
